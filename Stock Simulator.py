@@ -3,22 +3,22 @@ import time
 import sys
 import keyboard 
 
-original_cash = random.randint(100,10000) 
+original_cash = random.randint(100,10000) #produces virtual coins for the user to invest 
 number_of_stocks_owned = 0
 money_in_stocks = 0
-original_stock_price = random.randint(5,100) 
+original_stock_price = random.randint(5,100) #randomizes company stock price
 
 time.sleep(1)
 print("You have $",original_cash, "available to invest")
 time.sleep(1) 
 print("The stock price of this company is $",original_stock_price)
 time.sleep(1)
-max_to_buy = int(original_cash/original_stock_price)
+max_to_buy = int(original_cash/original_stock_price) #notifies user of how many shares can be bought with the given capital
 print("You can buy a max of", max_to_buy, "shares in this company")
 time.sleep(2)  
 
 initial_buy = int(input("How many shares do you wish to purcahse? "))
-if initial_buy>max_to_buy:
+if initial_buy>max_to_buy: #tests to make sure that the desired amount of shares can be purchased with the initial capital
     print("You don't have enough cash to buy that many shares yet. Please try again")
     sys.exit() 
 
@@ -33,7 +33,7 @@ print("You invested $",money_in_stocks)
 time.sleep(1.5) 
 print("")
 
-def volatility(stock_price):
+def volatility(stock_price): #function which randomly changes the price of the stock
     r = random.randint(1,2)
     x = random.randint(6,10) 
     if r ==1:
@@ -51,10 +51,10 @@ time.sleep(2)
 print("Good Luck!") 
 print("")
 
-while True:
+while True: #creates a loop
     new_price = int(volatility(original_stock_price))
     print("The current price of the stock is $",new_price)
-    if keyboard.is_pressed('s'):
+    if keyboard.is_pressed('s'): #when s is pressed, the following lines are executed 
         print("") 
         time.sleep(1) 
         profit = number_of_stocks_owned * new_price - number_of_stocks_owned * original_stock_price
@@ -73,9 +73,9 @@ while True:
         new_cash = cash + new_money_in_stocks
         print("You now have $",new_cash, "in cash to invest")
         time.sleep(1) 
-        break 
+        break #stops executing the program if "s" is pressed once
     else:
-        pass 
+        pass #allows the program to keep running until the user chooses to sell their stocks.
         
 
         
