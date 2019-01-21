@@ -75,7 +75,7 @@ while True: #creates a loop
         time.sleep(1) 
         break #stops executing the program if "s" is pressed once
     else:
-        pass #allows the program to keep running until the user chooses to sell their stocks.
+        pass #allows the program to keep running until the user chooses to sell their shares.
         
 
         
