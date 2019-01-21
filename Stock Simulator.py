@@ -35,7 +35,7 @@ print("")
 
 def volatility(stock_price): #function which randomly changes the price of the stock
     r = random.randint(1,2)
-    x = random.randint(6,10) 
+    x = random.randint(6,10) #you can increase volatility in the market by lowering the first bound i.e by changing 6 to 4. 
     if r ==1:
         stock_price = stock_price + 1/x * stock_price 
     if r ==2:
